@@ -3,38 +3,61 @@ class ParkingGarage():
     class ParkingGarage ....
     
     """
-    def __init__(self, tickets, parkingSpaces, currentTicket):
-        self.tickets = tickets
-        self.parkingSpaces = parkingSpaces
-        self.currentTicket = currentTicket
+    def __init__(self):
+        self.parkspaces = {
+            1 :{
+            'paid' : False,
+            'open' : True,
+            'left?' : False
+            },
+            2 :{
+            'paid' : False,
+            'open' : True,
+            'left?' : False
+            },
+            3: {
+            'paid' : False,
+            'open' : True,
+            'left?' : False
+            },
+            4: {
+            'paid' : False,
+            'open' : True,
+            'left?' : False
+            },
+            5 : {
+            'paid' : False,
+            'open' : True,
+            'left?' : False
+            },
+        }
+
        
 
     def takeTicket(self):
-        self.tickets -= 1
-        self.parkingSpaces -= 1
-        print(f"There are now {self.tickets} available tickets!") 
+       self.parkspaces['open'][False]
+       
+       
+
+
+        
+        #self.parkspaces{1:[2]}-= 1
+        #self.parkspaces -= 1
+        #print(f"There are now {self.tickets} available tickets!") 
         #("This should decrease the amount of tickets available by 1 
         #- This should decrease the amount of parkingSpaces available by 1 ")
-        print(f"There are now {self.parkingSpaces} available parking spaces!") 
+        #print(f"There are now {self.parkingSpaces} available parking spaces!") 
 
-    def payForParking(self,):
-        self.currentTicket = input("Pay amount:")
+    def payForParking(self):
+        self.parkspaces = input("Pay amount:")
         print("You're ticket has been paid, you have 15 minutes to leave.")  
         
-    def checkPaid(self, paid):
-         self.currentTicket = paid
-        
+    def checkPaid(self):
+         self.parkspaces = ['paid'] [True]
+                                   
     def LeaveGarage(self):
-            if self.checkPaid == True:
-                 print('Thank you, have a nice day!')
-            elif self.checkPaid != True:
-                 input('Please pay your parking ticket.')
+            
     
-
-    
-
-
-
         
     def run(self): 
         while True:
@@ -56,5 +79,6 @@ class ParkingGarage():
             
         
         
-Car = ParkingGarage(5, 5, 5,)
+Car = ParkingGarage()
 Car.run()
+
