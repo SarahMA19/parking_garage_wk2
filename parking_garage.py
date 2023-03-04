@@ -4,54 +4,54 @@ class ParkingGarage():
     What represents a parking garage
     
     """
-    def __init__(self, ticket, spaces, pay, currentTicket, leave):
-    
-       self.ticket = 5
+    def __init__(self, spaces, pay, leave):
        self.spaces = 5
        self.pay = pay
-       self.currentTicket = currentTicket
        self.leave = leave
        
-
+       
     def takeTicket(self):
-         self.ticket -= 1
-         self.spaces -= 1
-         print(f'Great, here is your ticket. There are now {self.ticket} tickets & {self.spaces} spaces left') 
+         if self.spaces == 0:
+            print("There are not more parking spaces available")
+         else:   
+            self.spaces -= 1
+            print(f'Great, here is your ticket. There are now {self.spaces} spaces left')
 
     def addPayment(self):
-        responce = input("Type amount you are going to pay: $")
-        self.pay.append(responce)
-              
-    def showPaid(self):
-        print("Here is your reciept for what you have paid:$")
-        for i in self.pay:
-            print(i)
+        if self.spaces < 5:
+            input("Give me some money")
+            self.pay = True
+            print ("Thanks, have a great day!")
+        else:
+            print ("What are you a ghost?")
                                    
     def LeaveGarage(self):
-        if self.currentTicket == i:
+        if self.spaces >= 5:
+            print("you crazy")
+        elif self.pay == True:
             print("Thank you, have a nice day!")
-        elif input("You must pay for your parking before you leave, please pay now: $ "):
-            print("Thank you, have a nice day!")
-      
+        else:
+            input("You must pay for your parking before you leave!")
+            print("Thanks for paying")
+        self.pay == False
         
     def run(self): 
         while True:
-            responce = input('Welcome to "Saronia Parking"! Type t for ticket, p for pay or l to leave.')
+            response = input('Welcome to "Saronia Parking"! Type t for ticket, p for pay or l to leave.')
             
-            if responce.lower() == "t":
+            if response.lower() == "t":
                 self.takeTicket()
             
-            if responce.lower() == "p":
+            if response.lower() == "p":
                  self.addPayment()
-                 self.showPaid()
 
-            if responce.lower() == "l":
+            if response.lower() == "l":
                  self.LeaveGarage()
-                 break
+                 
                  
 
     
-Car = ParkingGarage(0,0,[],0, 0)
+Car = ParkingGarage(0,0,0,)
 Car.run()
 
 
