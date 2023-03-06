@@ -23,11 +23,11 @@ class ParkingGarage():
             self.pay = True
             print ("Thanks, have a great day!")
         else:
-            print ("What are you a ghost?")
+            print ("What are you a ghost? **You cannot pay before you have recieved a ticket**")
                                    
     def LeaveGarage(self):
         if self.spaces >= 5:
-            print("you crazy")
+            print("You crazy **You cannot leave, if you have not recieved a ticket**")
         elif self.pay == True:
             print("Thank you, have a nice day!")
         else:
@@ -55,31 +55,3 @@ Car = ParkingGarage(0,0,0,)
 Car.run()
 
 
-# def __init__(self):
-#         self.parkspaces = {
-#             1 :{
-#             'paid' : False,
-#             'open' : True,
-#             'left?' : False
-#             },
-#             2 :{
-#             'paid' : False,
-#             'open' : True,
-#             'left?' : False
-#             },
-#             3: {
-#             'paid' : False,
-#             'open' : True,
-#             'left?' : False
-#             },
-#             4: {
-#             'paid' : False,
-#             'open' : True,
-#             'left?' : False
-#             },
-#             5 : {
-#             'paid' : False,
-#             'open' : True,
-#             'left?' : False
-#             },
-#         }
